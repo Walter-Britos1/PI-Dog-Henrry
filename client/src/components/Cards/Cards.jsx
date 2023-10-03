@@ -67,7 +67,6 @@ const Cards = () => {
   const totalPages = Math.ceil(filteredDogsByOrigin.length / dogsPerPage);
 
   const visiblePageNumbers = [];
-  const maxVisiblePages = 3;
 
   for (
     let i = Math.max(1, currentPage - 2);
@@ -106,7 +105,7 @@ const Cards = () => {
       <div className={styles.paginationContainer}>
         {currentPage > 1 && (
           <button
-            className={styles.paginationButton}
+            className={styles.paginationButtonPrevNext}
             onClick={() => handlePageChange(currentPage - 1)}
           >
             Prev...
@@ -125,7 +124,7 @@ const Cards = () => {
         ))}
         {currentPage < totalPages && (
           <button
-            className={styles.paginationButton}
+            className={styles.paginationButtonPrevNext}
             onClick={() => handlePageChange(currentPage + 1)}
           >
             Next...
