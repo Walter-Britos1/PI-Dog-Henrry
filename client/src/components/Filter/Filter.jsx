@@ -8,6 +8,7 @@ import {
   filterByTemperament,
   setFilterOrigin,
 } from '../../redux/action';
+import ClearFilter from '../ClearFilter/ClearFilter';
 import styles from './Filter.module.css';
 
 const Filter = () => {
@@ -66,10 +67,10 @@ const Filter = () => {
     // Determina el nuevo orden de clasificación: ascendente o descendente.
     const newSortOrder =
       sortOrder === 'ascendente' ? 'descendente' : 'ascendente';
-    
+
     // Actualiza el estado con el nuevo orden de clasificación.
     setSortOrder(newSortOrder);
-  
+
     // Despacha una acción Redux para ordenar la lista en el nuevo orden.
     if (newSortOrder === 'ascendente') {
       dispatch(sortDogsAscending());
@@ -82,6 +83,7 @@ const Filter = () => {
   const handleToggleFilters = () => {
     setShowFilters(!showFilters);
   };
+
 
   return (
     <div className={styles.filtersContainer}>
@@ -179,6 +181,7 @@ const Filter = () => {
           </div>
         )}
       </div>
+       <ClearFilter />
     </div>
   );
 };

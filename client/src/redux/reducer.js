@@ -9,7 +9,8 @@ import {
   FILTER_BY_WEIGHT,
   FILTER_BY_TEMPERAMENT,
   SET_FILTER_ORIGIN,
-  DELETE_DOG
+  DELETE_DOG,
+  CLEAR_FILTER
 } from './actionTypes';
 
 // Estado inicial de la aplicación
@@ -84,6 +85,15 @@ const rootReducer = (state = initialState, { type, payload }) => {
         sortOrder: 'descending',
         dogs: [...state.dogs].sort((a, b) => b.name.localeCompare(a.name)),
       };
+
+    case CLEAR_FILTER: 
+      return {
+        ...state,
+          sortOrder: 'none',
+          selectedWeightFilter: null, 
+          selectedTemperament: '', 
+          filterOrigin: 'All', 
+      }
 
     case SET_CURRENT_PAGE:
       return {

@@ -10,7 +10,8 @@ import {
     FILTER_BY_WEIGHT,
     FILTER_BY_TEMPERAMENT,
     SET_FILTER_ORIGIN,
-    DELETE_DOG
+    DELETE_DOG,
+    CLEAR_FILTER
   } from './actionTypes';
   
   // Acción para obtener todos los perros desde el servidor
@@ -128,7 +129,11 @@ import {
     type: SORT_DOGS_DESCENDING,
   });
   
-  
+  // Acción para limpiar los filtros 
+  export const clearFilter = () => ({
+    type: CLEAR_FILTER
+  })
+
   export const setCurrentPage = (page) => {
     return {
       type: SET_CURRENT_PAGE,
