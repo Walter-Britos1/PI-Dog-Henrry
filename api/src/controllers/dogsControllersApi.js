@@ -1,10 +1,12 @@
 const axios = require('axios');
+require('dotenv').config();
+const { API_KEY } = process.env
 
 // Función para obtener las razas de perros desde la API TheDogApi
 const getAllDogsAPI = async () => {
   try {
     // Realizar una solicitud GET a la API para obtener las razas de perros
-    const response = await axios.get('https://api.thedogapi.com/v1/breeds');
+    const response = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`);
     // Extraer los datos de la respuesta
     const apiData = response.data;
 

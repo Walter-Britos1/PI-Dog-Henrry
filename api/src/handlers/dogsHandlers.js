@@ -1,4 +1,4 @@
-const { createDogsDB, getDogsById, getAllDogsDB, deleteDog } = require("../controllers/dogsControllersDb");
+const { createDogsDB, getDogsById, getAllDogsDB, deleteDog } = require('../controllers/dogsControllersDb');
 const { getAllDogsAPI } = require('../controllers/dogsControllersApi')
 
 const getAllDogsHandler = async (req, res) => {
@@ -30,7 +30,7 @@ const getAllDogsHandler = async (req, res) => {
 
 // controlador para buscar perros por id ya sea en la base de datos o api
 const getDogsByIdHandler = async (req, res) => {
-  const { idRaza } = req.params; // Obtener el parámetro "idRaza" de la solicitud
+  const { idRaza } = req.params; // Obtener el parámetro 'idRaza' de la solicitud
 
   // Expresión regular para verificar si idRaza es un UUID válido
   const uuidPattern = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;

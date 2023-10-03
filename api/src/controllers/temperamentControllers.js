@@ -1,10 +1,12 @@
 const axios = require('axios');
 const { Temperaments } = require('../db');
+require('dotenv').config();
+const { API_KEY } = process.env;
 
 const getTemperamentsApi = async () => {
   try {
     // console.log('Fetching data from external API...');
-    const response = await axios.get('https://api.thedogapi.com/v1/breeds');
+    const response = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`);
     const temperamentsList = response.data;
 
     // Verificamos si la lista de temperamentos está vacía
