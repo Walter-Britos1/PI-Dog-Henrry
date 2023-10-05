@@ -7,6 +7,7 @@ import {
   sortDogsDescending,
   filterByTemperament,
   setFilterOrigin,
+  setCurrentPage
 } from '../../redux/action';
 import ClearFilter from '../ClearFilter/ClearFilter';
 import styles from './Filter.module.css';
@@ -49,18 +50,21 @@ const Filter = () => {
   const handleTemperamentFilterChange = (event) => {
     const selectedTemperament = event.target.value;
     dispatch(filterByTemperament(selectedTemperament));
+    dispatch(setCurrentPage(1)); // Restablecer la página actual a 1
   };
 
   // Manejar el cambio en el filtro de peso y despachar la acción correspondiente.
   const handleWeightFilterChange = (event) => {
     const selectedWeight = event.target.value;
     dispatch(filterByWeight(selectedWeight));
+    dispatch(setCurrentPage(1)); // Restablecer la página actual a 1
   };
 
   // Manejar el cambio en el filtro de origen y despachar la acción correspondiente.
   const handleOriginFilterChange = (event) => {
     const selectedOrigin = event.target.value;
     dispatch(setFilterOrigin(selectedOrigin));
+    dispatch(setCurrentPage(1)); // Restablecer la página actual a 1
   };
 
   const handleSortToggle = () => {

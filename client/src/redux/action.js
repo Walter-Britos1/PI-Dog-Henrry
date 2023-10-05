@@ -35,7 +35,10 @@ import {
   export const searchDogByName = (name) => {
     return async (dispatch) => {
       try {
-        if (name === '') alert('Please enter dog name');
+        if (name === '') {
+          alert('Please enter dog name');
+          return
+        }
   
         const api = await axios.get(`http://localhost:3001/dogs?name=${name}`);
         const filteredDogs = api.data;

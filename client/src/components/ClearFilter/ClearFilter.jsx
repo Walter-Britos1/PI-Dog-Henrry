@@ -1,13 +1,14 @@
 import { useDispatch } from 'react-redux';
-import { clearFilter } from '../../redux/action';
+import { clearFilter, setCurrentPage } from '../../redux/action';
 import styles from './ClearFilter.module.css'
 
 const ClearFilter = () => {
   const dispatch = useDispatch();
 
   const handleClearFilter = () => {
-    dispatch(clearFilter())
-  }
+    dispatch(clearFilter());
+    dispatch(setCurrentPage(1));
+  };
 
   return (
     <div className={styles.clearFilterContainer}>

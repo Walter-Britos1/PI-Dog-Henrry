@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { searchDogByName, getAllDogs } from '../../redux/action';
+import { searchDogByName, getAllDogs, setCurrentPage } from '../../redux/action';
 import styles from './SearchBar.module.css';
 
 const SearchBar = () => {
@@ -17,6 +17,9 @@ const SearchBar = () => {
   // Dispactch de la accion para buscar dogs por nombre
   const handlerSearch = (event) => {
     event.preventDefault();
+
+    // Restablecer la página actual a 1
+    dispatch(setCurrentPage(1));
 
     if (searchDog === '') {
       // Si el campo de búsqueda está vacío, establece searching en falso y muestra todos los perros nuevamente.

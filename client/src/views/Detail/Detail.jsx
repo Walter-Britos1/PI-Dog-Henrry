@@ -2,12 +2,12 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Loading from '../../components/Loading/Loading';
-import styles from './Detail.module.css'
+import styles from './Detail.module.css';
 
 const Detail = () => {
   // Obtiene el parámetro de la URL para identificar la raza
   const { idRaza } = useParams();
-  
+
   // Estado para almacenar la información del perro
   const [dogs, setDogs] = useState({});
 
@@ -53,11 +53,9 @@ const Detail = () => {
     return <div>{error}</div>;
   }
 
-
   const removeDuplicates = (array) => {
     return [...new Set(array)];
   };
-  
 
   return (
     <div className={styles.dogDetailContainer}>
@@ -94,13 +92,17 @@ const Detail = () => {
         />
 
         <h2>{dogs.name}</h2>
-        <p>
-          <strong>Breed Group:</strong>
-          {dogs.breed_group || ' Breed Group not found'}
-        </p>
-        <p>
-          <strong>Bred For:</strong> {dogs.bred_for || 'Bred For not found'}
-        </p>
+        {dogs.breed_group && (
+          <p>
+            <strong>Breed Group:</strong>
+            {dogs.breed_group}
+          </p>
+        )}
+        {dogs.bred_for && (
+          <p>
+            <strong>Bred For:</strong> {dogs.bred_for}
+          </p>
+        )}
         <p>
           <strong>Height: </strong>
           {dogs.height && typeof dogs.height === 'object'
@@ -109,7 +111,8 @@ const Detail = () => {
           cm
         </p>
         <p>
-          <strong>Life Span:</strong> {dogs.life_span || dogs.lifespan + ' years'}
+          <strong>Life Span:</strong>{' '}
+          {dogs.life_span || dogs.lifespan + ' years'}
         </p>
 
         <p>
@@ -118,9 +121,12 @@ const Detail = () => {
             ? removeDuplicates(dogs.Temperaments.map((t) => t.name)).join(', ')
             : dogs.temperament}
         </p>
-        <p>
-          <strong>Origin:</strong> {dogs.origin || 'Origin not found'}
-        </p>
+
+        {dogs.origin && (
+          <p>
+            <strong>Origin:</strong> {dogs.origin}
+          </p>
+        )}
       </div>
     </div>
   );
