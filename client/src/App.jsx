@@ -1,9 +1,19 @@
-import { Landing } from './views/index';
+import {  Route, Routes, useLocation } from 'react-router-dom';
+import { Landing, Home } from './views/index';
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
+  const { pathname } = useLocation()
+
   return (
     <>
-      <Landing />
+      {
+        pathname !== '/' && <NavBar />
+      }
+      <Routes>
+        <Route path='/' element={<Landing />} />
+        <Route path='/home' element={<Home />} />
+      </Routes>
     </>
   )
 }
