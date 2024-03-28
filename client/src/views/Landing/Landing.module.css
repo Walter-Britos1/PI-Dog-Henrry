@@ -1,66 +1,67 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  min-height: 100vh;
-  background-image: url('../../image/background-landing.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding-left: 20px; /* Agregar margen a la izquierda del contenedor */
-}
-
-.title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  letter-spacing: 3px;
-  text-align: left;
-  margin-left: 20px; /* Agregar margen a la izquierda del título */
-}
-
-.link {
-  text-decoration: none; /* Elimina el subrayado de los enlaces */
-  color: #fff; /* Cambia el color de texto de los enlaces si es necesario */
-}
-
-.button {
-  background-color: #85502b;
-  font-size: 1rem;
-  font: fallback;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid black;
-  border-radius: 15px;
-  cursor: pointer;
-  opacity: 0.8;
-  margin-top: 1rem;
-  margin-left: 20%; /* Agregar margen a la izquierda del botón */
-  align-self: flex-start;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-}
-
-.button:hover {
-  background-color: #4d2b13;
-  opacity: 1.0;
-}
-
-/* Media Query para pantallas pequeñas */
-@media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('../../image/background-landing.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-left: 20px; /* Agregar margen a la izquierda del contenedor */
+  }
+  
   .title {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    margin-left: 0; /* Eliminar el margen izquierdo en pantallas pequeñas */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    letter-spacing: 3px;
+    text-align: left;
+    margin-left: 20px; /* Agregar margen a la izquierda del título */
   }
-
+  
+  .link {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #fff; /* Cambia el color de texto de los enlaces si es necesario */
+  }
+  
   .button {
-    padding: 0.4rem 0.8rem;
-    margin-top: 0.3rem;
-    margin-left: 0; /* Eliminar el margen izquierdo en pantallas pequeñas */
+    background-color: #85502b;
+    font-size: 1rem;
+    font: fallback;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+    opacity: 0.8;
+    margin-top: 1rem;
+    margin-left: 20%; /* Agregar margen a la izquierda del botón */
     align-self: flex-start;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
   }
-}
+  
+  .button:hover {
+    background-color: #4d2b13;
+    opacity: 1.0;
+  }
+  
+  /* Media Query para pantallas pequeñas */
+  @media screen and (max-width: 600px) {
+    .title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      margin-left: 0; /* Eliminar el margen izquierdo en pantallas pequeñas */
+    }
+  
+    .button {
+      padding: 0.4rem 0.8rem;
+      margin-top: 0.3rem;
+      margin-left: 0; /* Eliminar el margen izquierdo en pantallas pequeñas */
+      align-self: flex-start;
+    }
+  }
+  
