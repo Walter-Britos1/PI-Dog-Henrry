@@ -1,7 +1,9 @@
+import Cards from '../../components/Cards/Cards';
 
 const Home = () => {
+
   return (
-    <h1>home</h1>
+    <Cards />
   )
 }
 
