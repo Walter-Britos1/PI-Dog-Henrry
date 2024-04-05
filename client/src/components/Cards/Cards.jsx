@@ -1,9 +1,11 @@
 import { useSelector } from 'react-redux';
 import Card from '../Card/Card';
-
+import useDogs from '../../hooks/useDogs';
 
 const Cards = () => {
-  const dogs = useSelector((state) => state.dogs.dogs)
+  const { handleDogs } = useDogs();
+ 
+  const dogs = useSelector((state) => state.dogs.dogs);
 
   return (
     <div>
