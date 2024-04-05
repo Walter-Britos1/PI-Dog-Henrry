@@ -1,4 +1,5 @@
 import useDogs from '../../hooks/useDogs';
+import { Search } from 'lucide-react';
 
 const SearchBar = () => {
   const { handleSearchDog, handleChange, name } = useDogs();
@@ -7,7 +8,9 @@ const SearchBar = () => {
     <div>
       <form onSubmit={handleSearchDog}>
         <input type='search' value={name} onChange={handleChange}/>
-        <button>Search</button>
+        <button>
+          <Search />
+        </button>
       </form>
     </div>
   );
